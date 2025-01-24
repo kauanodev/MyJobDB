@@ -11,7 +11,9 @@
 
 ## 🏗️ Estrutura
 
-´´´
+
+```
+
 MyJobDB
  ├── README.md
  ├── queries
@@ -20,7 +22,9 @@ MyJobDB
  │   └── create_tables.py
  └── tables
      └── 001_phone_number.sql
-´´´
+     
+```
+
 
 ### 𝄜  tables
 
