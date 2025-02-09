@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "web"
+description = "MyJobDB/web"
+authors = [{ name = "iceking32", email = "iceking32@gmail.com" }]
+requires-python = ">=3.6"
+dynamic = ["version"]
+
+dependencies = [
+	"Jinja2",
+	"fastapi-cli",
+	"fastapi",
+	"httptools",
+	"httpx",
+	"psycopg2-binary",
+	"python-dotenv",
+	"uvicorn"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+]
+
+[tool.setuptools]
+packages = ["app"]
