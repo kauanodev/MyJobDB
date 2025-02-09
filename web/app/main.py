@@ -23,9 +23,9 @@ public_folder_path = APP_ROOT + "/public"
 static_files = StaticFiles(directory=public_folder_path)
 app.mount("/", static_files, name="static")
 
-##################
-#  STATIC FILES  #
-##################
+#################
+#  MIDDLEWARES  #
+#################
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
