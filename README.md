@@ -51,6 +51,16 @@ O nome do arquivo basicamente será o nome da tabela envolvida:
 
 O arquivo `create_tables.py` basicamente irá unir todos os arquivos que estão dentro do diretório `tables` em um só script sql
 
+## 🧩 Padrões
+
+| Referência       | Case                                                                                                                        |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| Tabelas          | [PascalCase](https://www.freecodecamp.org/news/snake-case-vs-camel-case-vs-pascal-case-vs-kebab-case-whats-the-difference/) |
+| Campos da tabela | [snake_case](https://www.freecodecamp.org/news/snake-case-vs-camel-case-vs-pascal-case-vs-kebab-case-whats-the-difference/) |
+| Nome de arquivos | [snake_case](https://www.freecodecamp.org/news/snake-case-vs-camel-case-vs-pascal-case-vs-kebab-case-whats-the-difference/) |
+
+### Nome das tabelas
+
 ## 👨🏻‍💻 Fluxo de trabalho
 
 Para trabalharmos em equipe, será usado algumas funcionalidades que do Git e do Github que são usados por empresas:
