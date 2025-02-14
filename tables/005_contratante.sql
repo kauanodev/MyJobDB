@@ -4,10 +4,6 @@
 
 CREATE TABLE IF NOT EXISTS public.contratante
 (
-    avaliacao numeric NOT NULL
+    usuario_id integer NOT NULL,
+    CONSTRAINT contratante_pkey PRIMARY KEY (usuario_id)
 )
-
-TABLESPACE pg_default;
-
-ALTER TABLE IF EXISTS public.contratante
-    OWNER to postgres;
