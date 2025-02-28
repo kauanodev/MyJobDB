@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+      "esbenp.prettier-vscode",
+      "ms-python.python",
+      "ms-python.black-formatter",
+      "wholroyd.jinja",
+      "waseemakram.jinja-snippets-flask"
+    ]
+  }
