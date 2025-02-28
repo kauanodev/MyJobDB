@@ -1,20 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Hello</title>
-		<link href="/css/globals.css" rel="stylesheet">
-	</head>
-	<body>
-    <h1>Hello World</h1>
-		<p>User Agent: {{user_agent}}</p>
-		<p>{{utc_now}}</p>
-		<ul>
-			{% for item in items %}
-				<li>{{item}}</li>
-			{% endfor %}
-		</ul>
-		<script src="/js/home.js"></script>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hello</title>
+    <link href="/css/globals.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <h1>Helpin</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/">Contratantes</a></li>
+          <li><a href="/">Prestadores</a></li>
+          <li><a href="/">Solicitar Serviços</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>Usuários</h2>
+
+        <form method="post" action="/create-user">
+          <input type="email" name="email" required />
+          <input type="password" name="password" required />
+          <button type="submit">Criar</button>
+        </form>
+
+        <ul>
+          {% for user in users %}
+          <li>
+            {{user.nome}} {{user.cpf}} {{user.endereco}}
+            {{user.data_de_nascimento}}
+
+            <a href="/user/{{user.id}}">Editar</a>
+            <form method="post" action="/delete-user/{{user.id}}">
+              <button type="submit">Deletar</button>
+            </form>
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
+    </main>
+
+    <script src="/js/home.js"></script>
+  </body>
 </html>

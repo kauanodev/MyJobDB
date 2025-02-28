@@ -1,17 +1,35 @@
 from fastapi import Request, Response
-from datetime import datetime
 
 from app.settings import TEMPLATES
 
 
-class IndexController():
+class IndexController:
 
     def index(self, request: Request, response: Response):
-        user_agent = request.headers.get("User-Agent")
-        response.headers.append("Content-Type", "text/html")
-        utc_now = datetime.utcnow()
+        users = [
+            {
+                "id": 1,
+                "nome": "cliclano",
+                "cpf": "12345678902",
+                "endereco": "Rua delclano",
+                "data_de_nascimento": "12/12/00",
+            },
+            {
+                "id": 2,
+                "nome": "cliclano",
+                "cpf": "12345678902",
+                "endereco": "Rua delclano",
+                "data_de_nascimento": "12/12/00",
+            },
+            {
+                "id": 3,
+                "nome": "cliclano",
+                "cpf": "12345678902",
+                "endereco": "Rua delclano",
+                "data_de_nascimento": "12/12/00",
+            },
+        ]
+
         return TEMPLATES.TemplateResponse(
-            "index.html",
-            {"request": request, "user_agent": user_agent,
-                "utc_now": utc_now, "items": [1, 2, 3, 1]}
+            "index.html", {"request": request, "users": users}
         )

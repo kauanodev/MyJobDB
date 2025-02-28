@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
 from app.routes import index
+from app.routes import user
 
 
 app = FastAPI(title=PROJECT_NAME)
@@ -12,7 +13,7 @@ app = FastAPI()
 ############
 #  ROUTES  #
 ############
-all_routers = [index.router]
+all_routers = [index.router, user.router]
 for router in all_routers:
     app.include_router(router)
 
