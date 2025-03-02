@@ -23,4 +23,4 @@ WHERE id = %s;
 --DELETE
 DELETE FROM public."Servico"
 WHERE id = %s;
---END DELETE
+--END-DELETE
