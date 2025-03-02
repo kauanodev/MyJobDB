@@ -8,4 +8,4 @@ CREATE TABLE IF NOT EXISTS public."Servico"
     nome text COLLATE pg_catalog."default" NOT NULL,
     categoria text COLLATE pg_catalog."default" NOT NULL,
     CONSTRAINT "Servico_pkey" PRIMARY KEY (id)
-)
+);

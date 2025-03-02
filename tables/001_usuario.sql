@@ -10,4 +10,4 @@ CREATE TABLE IF NOT EXISTS public."Usuario"
     nome character varying(255) COLLATE pg_catalog."default" NOT NULL,
     data_de_nascimento date NOT NULL,
     CONSTRAINT usuario_pkey PRIMARY KEY (id)
-)
+);
