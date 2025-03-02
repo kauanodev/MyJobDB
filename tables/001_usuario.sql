@@ -4,7 +4,7 @@
 
 CREATE TABLE IF NOT EXISTS public."Usuario"
 (
-    id integer NOT NULL,
+    id SERIAL NOT NULL,
     cpf character varying(11) COLLATE pg_catalog."default" NOT NULL,
     endereco text COLLATE pg_catalog."default" NOT NULL,
     nome character varying(255) COLLATE pg_catalog."default" NOT NULL,
