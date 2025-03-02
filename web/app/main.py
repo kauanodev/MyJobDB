@@ -1,9 +1,11 @@
-from app.settings import PROJECT_NAME, BACKEND_CORS_ORIGINS, APP_ROOT
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
-from app.routes import index
+from app.settings import PROJECT_NAME, BACKEND_CORS_ORIGINS, APP_ROOT
+from app.db.tables.create import create_tables
+from app.db.seeds import create_seeds
+
 from app.routes import user
 
 
@@ -13,7 +15,7 @@ app = FastAPI()
 ############
 #  ROUTES  #
 ############
-all_routers = [index.router, user.router]
+all_routers = [user.router]
 for router in all_routers:
     app.include_router(router)
 
@@ -36,3 +38,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+##################
+#    DATABASE    #
+##################
+create_tables()
+create_seeds()
