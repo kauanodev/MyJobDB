@@ -1,12 +1,29 @@
 --SELECT_MANY
-SELECT * FROM public."Usuario" AS u
-LEFT JOIN public."PrestadorDeServico" AS s ON u.id = s.user_id
+SELECT 
+  u.id, 
+  u.cpf, 
+  u.endereco, 
+  u.nome, 
+  u.data_de_nascimento, 
+  s.additional_info 
+FROM 
+  public."Usuario" AS u 
+  LEFT JOIN public."PrestadorDeServico" AS s ON u.id = s.user_id
 --END-SELECT_MANY
 
 --SELECT
-SELECT * FROM public."Usuario" AS u 
-LEFT JOIN public."PrestadorDeServico" AS s ON u.id = s.user_id
-WHERE u.id = %s
+SELECT 
+  u.id, 
+  u.cpf, 
+  u.endereco, 
+  u.nome, 
+  u.data_de_nascimento, 
+  s.additional_info 
+FROM 
+  public."Usuario" AS u 
+  LEFT JOIN public."PrestadorDeServico" AS s ON u.id = s.user_id 
+WHERE 
+  u.id = %s
 --END-SELECT
 
 --INSERT
