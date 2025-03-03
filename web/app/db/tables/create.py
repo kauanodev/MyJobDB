@@ -1,3 +1,4 @@
+from app.settings import APP_ROOT
 from app.db.connection import db_connection
 from psycopg2.extensions import cursor as Cursor
 import os
@@ -13,12 +14,10 @@ def create_tables():
 
 
 def get_query():
-    create_file_path = os.path.abspath(__file__)
-    db_dir = os.path.dirname(create_file_path)
-    app_dir = os.path.dirname(db_dir)
+    app_dir = APP_ROOT
     web_dir = os.path.dirname(app_dir)
     root_dir = os.path.dirname(web_dir)
-    tables_dir = os.path.join(os.path.dirname(root_dir), "tables")
+    tables_dir = os.path.join(root_dir, "tables")
     all_sql_files = os.listdir(tables_dir)
     sorted_sql_files = sorted(
         all_sql_files, key=lambda x: int(x.split('_')[0]))
