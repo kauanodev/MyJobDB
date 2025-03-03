@@ -1,15 +1,40 @@
-from fastapi import Request, Response
+from fastapi import Request
 from fastapi.responses import RedirectResponse
-from pydantic import BaseModel
 
+from app.db.tables import user as user_table
+from app.db.models import user as user_model
 
-class UserDataForm(BaseModel):
-    email: str
-    password: str
+from app.settings import TEMPLATES
 
 
 class UserController:
 
-    def create(self, user: UserDataForm):
-        print(user)
+    def index(self, request: Request, name: str | None):
+        users = user_table.select_many(name)
+        return TEMPLATES.TemplateResponse("index.html", {
+            "request": request,
+            "users": users
+        })
+
+    def create(self, user: user_model.InsertUser):
+        user_table.insert(
+            (user.nome, user.cpf, user.endereco, user.data_de_nascimento))
+        return RedirectResponse(url="/", status_code=302)
+
+    def edit(self, id: int, user: user_model.InsertUser):
+        user_table.update(
+            id,
+            (user.nome, user.cpf, user.endereco, user.data_de_nascimento)
+        )
+        return RedirectResponse(url="/", status_code=303)
+
+    def edit_view(self, request: Request, id: int):
+        user = user_table.select_one(id, None)
+        return TEMPLATES.TemplateResponse("edit_user.html", {
+            "request": request,
+            "user": user
+        })
+
+    def delete(self, id: int):
+        user_table.delete(id)
         return RedirectResponse(url="/", status_code=302)

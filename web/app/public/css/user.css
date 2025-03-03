@@ -1,0 +1,10 @@
+main section ul {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+main section ul li {
+	display: flex;
+	gap: 0.5rem;
+}

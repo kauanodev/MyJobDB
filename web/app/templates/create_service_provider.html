@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Edit Service Provider</title>
+    <link href="/css/globals.css" rel="stylesheet" />
+    <link href="/css/service-provider.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <h1>Helpin</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/contratantes">Contratantes</a></li>
+          <li><a href="/service-provider">Prestadores</a></li>
+          <li><a href="/service">Solicitar Serviços</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+				<h2>Prestador</h2>
+
+				<form method="post" action="/create-service-provider">
+					<input type="text" name="user_id" placeholder="user_id" required />
+					<input type="text" name="additional_info" placeholder="additional_info" required />
+          <button type="submit">Criar</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="/js/home.js"></script>
+  </body>
+</html>

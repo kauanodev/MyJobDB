@@ -6,7 +6,7 @@ from app.settings import PROJECT_NAME, BACKEND_CORS_ORIGINS, APP_ROOT
 from app.db.tables.create import create_tables
 from app.db.seeds import create_seeds
 
-from app.routes import user
+from app.routes import service, service_provider
 
 
 app = FastAPI(title=PROJECT_NAME)
@@ -15,7 +15,7 @@ app = FastAPI()
 ############
 #  ROUTES  #
 ############
-all_routers = [user.router]
+all_routers = [service.router, service_provider.router]
 for router in all_routers:
     app.include_router(router)
 
