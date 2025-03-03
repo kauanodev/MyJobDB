@@ -48,10 +48,7 @@ def insert(data: tuple):
     connection = db_connection()
     cursor: Cursor = connection.cursor()
     cursor.execute(insert_query, data)
-    rows = cursor.fetchone()
     connection.commit()
-    if rows:
-        return rows[0]
 
 
 def update(id: int, data: tuple):
