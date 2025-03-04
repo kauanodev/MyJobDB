@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Create Service Provider</title>
+    <title>Edit User</title>
     <link href="/css/globals.css" rel="stylesheet" />
-    <link href="/css/service-provider.css" rel="stylesheet" />
+    <link href="/css/user.css" rel="stylesheet" />
   </head>
   <body>
     <header>
@@ -23,12 +23,14 @@
 
     <main>
       <section>
-				<h2>Prestador</h2>
+				<h2>Usuário</h2>
 
-				<form method="post" action="/create-service-provider">
-					<input type="text" name="user_id" placeholder="user_id" required />
-					<input type="text" name="additional_info" placeholder="additional_info" required />
-          <button type="submit">Criar</button>
+				<form method="post" action="/edit-service-provider/{{user.id}}">
+					<input type="text" name="nome" required value="{{user.nome}}" />
+					<input type="text" name="cpf" required value="{{user.cpf}}" />
+					<input type="text" name="endereco" required value="{{user.endereco}}" />
+					<input type="text" name="data_de_nascimento" required value="{{user.data_de_nascimento}}" />
+          <button type="submit">Editar</button>
         </form>
       </section>
     </main>

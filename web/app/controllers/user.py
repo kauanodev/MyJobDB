@@ -11,9 +11,14 @@ class UserController:
 
     def index(self, request: Request, name: str | None):
         users = user_table.select_many(name)
-        return TEMPLATES.TemplateResponse("index.html", {
+        return TEMPLATES.TemplateResponse("user.html", {
             "request": request,
             "users": users
+        })
+
+    def create_view(self, request: Request):
+        return TEMPLATES.TemplateResponse("create_user.html", {
+            "request": request,
         })
 
     def create(self, user: user_model.InsertUser):
@@ -32,7 +37,12 @@ class UserController:
         user = user_table.select_one(id, None)
         return TEMPLATES.TemplateResponse("edit_user.html", {
             "request": request,
-            "user": user
+            "user": user_model.SelectUser(
+                nome=user.nome,
+                cpf=user.cpf,
+                endereco=user.endereco,
+                data_de_nascimento=user.data_de_nascimento,
+            )
         })
 
     def delete(self, id: int):
