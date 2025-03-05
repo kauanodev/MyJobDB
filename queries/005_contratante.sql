@@ -7,7 +7,7 @@ SELECT * FROM public."Contratante"
 WHERE usuario_id = %s;
 --END-SELECT
 
--- INSERT
+--INSERT
 INSERT INTO public."Contratante" (usuario_id)
 VALUES (%s);
 --END-INSERT
