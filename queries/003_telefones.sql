@@ -17,7 +17,6 @@ UPDATE public."Telefones"
 SET                  
     ddd = %s,
     numero = %s
-    
 WHERE usuario_id = %s;
 --END-UPDATE
 
