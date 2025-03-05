@@ -22,7 +22,7 @@ SET
 WHERE id = %s;
 --END-UPDATE
 
--- DELETE
+--DELETE
 DELETE FROM public."Usuario"
 WHERE id = %s;
 --END-DELETE
