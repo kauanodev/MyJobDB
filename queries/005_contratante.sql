@@ -19,7 +19,7 @@ SET
 WHERE usuario_id = %s;
 --END-UPDATE
 
--- DELETE
+--DELETE
 DELETE FROM public."Contratante"
 WHERE usuario_id = %s;
 --END-DELETE
