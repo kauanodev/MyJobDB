@@ -6,34 +6,45 @@
     <title>Home</title>
     <link href="/css/globals.css" rel="stylesheet" />
     <link href="/css/user.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
   </head>
-  <body>
+  <body class="bg-white dark:bg-gray-900 antialiased">
     <header>
-      <h1>Helpin</h1>
+      <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Helpin</h1>
       <nav>
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/contratantes">Contratantes</a></li>
-          <li><a href="/service-provider">Prestadores</a></li>
-          <li><a href="/service">Serviços</a></li>
-          <li><a href="/service-request">Solicitar Serviço</a></li>
+          <li>
+            <a href="/" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"> Home </a>
+          </li>
+          <li>
+            <a href="/contratantes" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"> Contratantes </a>
+          </li>
+          <li>
+            <a href="/service-provider" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"> Prestadores </a>
+          </li>
+          <li>
+            <a href="/service" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"> Serviços </a>
+          </li>
+          <li>
+            <a href="/service-request" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"> Solicitar Serviço </a>
+          </li>
         </ul>
       </nav>
     </header>
 
     <main>
       <section>
-        <h2>Usuários</h2>
-				<a href="/create-service-provider">Criar prestador</a>
+        <h2 class="text-4xl font-extrabold dark:text-white">Usuários</h2>
+				<a href="/create-service-provider" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Criar prestador</a>
         <ul>
           {% for user in users %}
-          <li>
+          <li class="mb-3 text-gray-500 dark:text-gray-400">
             {{user.nome}} {{user.cpf}} {{user.endereco}}
 						{{user.data_de_nascimento}} {{user.informacoes_adicionais}}
 
-            <a href="/service-provider/{{user.id}}">Editar</a>
+            <a href="/service-provider/{{user.id}}" class="text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800">Editar</a>
             <form method="post" action="/delete-service-provider/{{user.id}}">
-              <button type="submit">Deletar</button>
+              <button type="submit" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Deletar</button>
             </form>
           </li>
           {% endfor %}
@@ -42,5 +53,6 @@
     </main>
 
     <script src="/js/home.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
   </body>
 </html>
