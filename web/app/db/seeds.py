@@ -37,7 +37,7 @@ def create_seeds():
     cursor.execute('SELECT COUNT(*) FROM public."PrestadorDeServico";')
     if cursor.fetchone()[0] == 0:
         seed_data_prestador = """
-        INSERT INTO public."PrestadorDeServico" (user_id, additional_info) VALUES
+        INSERT INTO public."PrestadorDeServico" (usuario_id, informacoes_adicionais) VALUES
         (1, 'Profissional com 5 anos de experiência em limpeza.'),
         (2, 'Encanador experiente, atende toda a região.'),
         (3, 'Pintor profissional, especializado em casas e apartamentos.'),

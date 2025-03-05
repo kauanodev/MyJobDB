@@ -29,7 +29,7 @@
           {% for user in users %}
           <li>
             {{user.nome}} {{user.cpf}} {{user.endereco}}
-						{{user.data_de_nascimento}} {{user.additional_info}}
+						{{user.data_de_nascimento}} {{user.informacoes_adicionais}}
 
             <a href="/service-provider/{{user.id}}">Editar</a>
             <form method="post" action="/delete-service-provider/{{user.id}}">
