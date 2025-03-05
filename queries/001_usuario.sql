@@ -9,7 +9,7 @@ WHERE id = %s;
 
 --INSERT
 INSERT INTO public."Usuario" (cpf, endereco, nome, data_de_nascimento)
-VALUES (%s, %s, %s, %s, %s);
+VALUES (%s, %s, %s, %s);
 --END-INSERT
 
 --UPDATE
