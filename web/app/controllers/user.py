@@ -38,10 +38,11 @@ class UserController:
         return TEMPLATES.TemplateResponse("edit_user.html", {
             "request": request,
             "user": user_model.SelectUser(
-                nome=user.nome,
-                cpf=user.cpf,
-                endereco=user.endereco,
-                data_de_nascimento=user.data_de_nascimento,
+                id=user["id"],
+                nome=user["nome"],
+                cpf=user["cpf"],
+                endereco=user["endereco"],
+                data_de_nascimento=user["data_de_nascimento"].isoformat(),
             )
         })
 

@@ -37,7 +37,7 @@ def create_seeds():
     cursor.execute('SELECT COUNT(*) FROM public."PrestadorDeServico";')
     if cursor.fetchone()[0] == 0:
         seed_data_prestador = """
-        INSERT INTO public."PrestadorDeServico" (user_id, additional_info) VALUES
+        INSERT INTO public."PrestadorDeServico" (usuario_id, informacoes_adicionais) VALUES
         (1, 'Profissional com 5 anos de experiência em limpeza.'),
         (2, 'Encanador experiente, atende toda a região.'),
         (3, 'Pintor profissional, especializado em casas e apartamentos.'),
@@ -57,5 +57,18 @@ def create_seeds():
         """
         print(seed_data_contratante)
         cursor.execute(seed_data_contratante)
+
+    cursor.execute('SELECT COUNT(*) FROM public."Solicitacao";')
+    if cursor.fetchone()[0] == 0:
+        seed_data_solicitacao = """
+        INSERT INTO public."Solicitacao" (preco, prazo, descricao, servico_id, contratante_id, prestador_id) VALUES
+        (150.00, '2023-10-15 12:30:00', 'Limpeza pós-obra', 1, 1, 1),
+        (200.50, '2023-11-02 09:00:00', 'Reparo no banheiro', 2, 2, 2),
+        (350.00, '2023-10-22 14:00:00', 'Pintura de apartamento', 3, 1, 3),
+        (120.00, '2023-10-10 08:00:00', 'Manutenção de jardim', 4, 3, 4),
+        (80.00, '2023-10-25 10:00:00', 'Aula particular de matemática', 5, 2, NULL);
+        """
+        print(seed_data_solicitacao)
+        cursor.execute(seed_data_solicitacao)
 
     connection.commit()

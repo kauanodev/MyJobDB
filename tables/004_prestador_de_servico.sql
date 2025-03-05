@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS public."PrestadorDeServico"
 (
-    user_id integer NOT NULL references public."Usuario"(id),
-    additional_info text,
-    PRIMARY KEY (user_id)
+    usuario_id INTEGER NOT NULL references public."Usuario"(id),
+    informacoes_adicionais TEXT,
+    PRIMARY KEY (usuario_id)
 );
 
