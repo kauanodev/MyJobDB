@@ -4,11 +4,6 @@
 	box-sizing: border-box;
 }
 
-body {
-	color: black;
-	background: white;
-}
-
 header {
 	width: 100%;
 	padding: 1rem;

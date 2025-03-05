@@ -22,13 +22,15 @@ class ServiceProviderController:
         })
 
     def create(self, user: service_provider_model.InsertServiceProvider):
-        service_provider_table.insert((user.user_id, user.additional_info))
+        service_provider_table.insert(
+            (user.usuario_id, user.informacoes_adicionais))
         return RedirectResponse(url="/", status_code=302)
 
     def edit(self,
              id: int,
              user: service_provider_model.InsertServiceProvider):
-        service_provider_table.update(id, (user.user_id, user.additional_info))
+        service_provider_table.update(
+            id, (user.usuario_id, user.informacoes_adicionais))
         return RedirectResponse(url="/", status_code=303)
 
     def edit_view(self, request: Request, id: int):

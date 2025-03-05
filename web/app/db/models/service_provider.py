@@ -8,9 +8,9 @@ class SelectServiceProvider(BaseModel):
     endereco: str
     endereco: str
     data_de_nascimento: str
-    additional_info: str
+    informacoes_adicionais: str
 
 
 class InsertServiceProvider(BaseModel):
-    user_id: int
-    additional_info: str
+    usuario_id: int
+    informacoes_adicionais: str
