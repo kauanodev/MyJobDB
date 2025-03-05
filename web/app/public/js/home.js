@@ -1,1 +1,1 @@
-alert("Bem vindo, ao trabalho de DB");
+console.debug('Bem vindo, ao trabalho de DB');

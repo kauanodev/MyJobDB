@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Home</title>
+    <title>Serviços</title>
     <link href="/css/globals.css" rel="stylesheet" />
-    <link href="/css/user.css" rel="stylesheet" />
+    <link href="/css/service.css" rel="stylesheet" />
   </head>
   <body>
     <header>
@@ -22,6 +22,23 @@
     </header>
 
     <main>
+      <section>
+        <h2>Serviços</h2>
+				<a href="/create-service">Criar serviço</a>
+
+        <ul>
+          {% for service in services %}
+          <li>
+            {{service.id}} {{service.nome}} {{service.categoria}}
+
+            <a href="/service/{{service.id}}">Editar</a>
+            <form method="post" action="/delete-service/{{service.id}}">
+              <button type="submit">Deletar</button>
+            </form>
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
     </main>
 
     <script src="/js/home.js"></script>

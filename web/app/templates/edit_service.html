@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Home</title>
+    <title>Edit Service</title>
     <link href="/css/globals.css" rel="stylesheet" />
-    <link href="/css/user.css" rel="stylesheet" />
+    <link href="/css/service.css" rel="stylesheet" />
   </head>
   <body>
     <header>
@@ -22,6 +22,15 @@
     </header>
 
     <main>
+      <section>
+				<h2>Serviço</h2>
+
+				<form method="post" action="/edit-service/{{service.id}}">
+					<input type="text" name="nome" required value="{{service.nome}}" />
+					<input type="text" name="categoria" required value="{{service.categoria}}" />
+          <button type="submit">Editar</button>
+        </form>
+      </section>
     </main>
 
     <script src="/js/home.js"></script>

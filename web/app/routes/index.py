@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Request, Response
+from fastapi import APIRouter, Request
 from app.controllers import index
 
 
@@ -7,5 +7,5 @@ controller = index.IndexController()
 
 
 @router.get("/")
-def index(request: Request, response: Response):
-    return controller.index(request, response)
+def index(request: Request):
+    return controller.index(request)

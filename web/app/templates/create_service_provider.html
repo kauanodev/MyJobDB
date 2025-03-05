@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Home</title>
+    <title>Create Service Provider</title>
     <link href="/css/globals.css" rel="stylesheet" />
-    <link href="/css/user.css" rel="stylesheet" />
+    <link href="/css/service-provider.css" rel="stylesheet" />
   </head>
   <body>
     <header>
@@ -22,6 +22,15 @@
     </header>
 
     <main>
+      <section>
+				<h2>Prestador</h2>
+
+				<form method="post" action="/create-service-provider">
+					<input type="text" name="user_id" placeholder="user_id" required />
+					<input type="text" name="additional_info" placeholder="additional_info" required />
+          <button type="submit">Criar</button>
+        </form>
+      </section>
     </main>
 
     <script src="/js/home.js"></script>
