@@ -1,4 +1,4 @@
-CREATE TABLE public."PrestadorDeServico"
+CREATE TABLE IF NOT EXISTS public."PrestadorDeServico"
 (
     user_id integer NOT NULL references public."Usuario"(id),
     additional_info text,

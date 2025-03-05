@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Home</title>
+    <title>User</title>
     <link href="/css/globals.css" rel="stylesheet" />
     <link href="/css/user.css" rel="stylesheet" />
   </head>
@@ -22,6 +22,23 @@
     </header>
 
     <main>
+      <section>
+        <h2>Usuários</h2>
+				<a href="/create-user">Criar usuário</a>
+        <ul>
+          {% for user in users %}
+          <li>
+            {{user.nome}} {{user.cpf}} {{user.endereco}}
+						{{user.data_de_nascimento}}
+
+            <a href="/user/{{user.id}}">Editar</a>
+            <form method="post" action="/delete-user/{{user.id}}">
+              <button type="submit">Deletar</button>
+            </form>
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
     </main>
 
     <script src="/js/home.js"></script>
