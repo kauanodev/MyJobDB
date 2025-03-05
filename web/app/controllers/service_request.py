@@ -25,10 +25,10 @@ class ServiceRequestController:
         service_request_table.insert((
             service_request.preco,
             service_request.prazo,
-            service_request.descricao,
+            None if service_request.descricao == "" else service_request.descricao,
             service_request.servico_id,
             service_request.contratante_id,
-            service_request.prestador_id
+            None if service_request.prestador_id == 0 else service_request.prestador_id
         ))
         return RedirectResponse(url="/", status_code=302)
 
@@ -36,10 +36,10 @@ class ServiceRequestController:
         service_request_table.update(id, (
             service_request.preco,
             service_request.prazo,
-            service_request.descricao,
+            None if service_request.descricao == "" else service_request.descricao,
             service_request.servico_id,
             service_request.contratante_id,
-            service_request.prestador_id
+            None if service_request.prestador_id == 0 else service_request.prestador_id
         ))
         return RedirectResponse(url="/", status_code=303)
 
@@ -50,14 +50,15 @@ class ServiceRequestController:
             "service_request": service_request_model.SelectServiceRequest(
                 id=service_request["id"],
                 preco=service_request["preco"],
-                prazo=service_request["prazo"].isoformat(),
-                descricao=service_request["descricao"],
+                prazo=service_request["prazo"].isoformat().replace(
+                    "T00:00:00", ""),
+                descricao="" if service_request["descricao"] is None else service_request["descricao"],
                 servico_id=service_request["servico_id"],
                 contratante_id=service_request["contratante_id"],
-                prestador_id=service_request["prestador_id"]
+                prestador_id=0 if service_request["prestador_id"] is None else service_request["prestador_id"]
             ),
         })
 
-        def delete(self, id: int):
-            service_request_table.delete(id)
-            return RedirectResponse(url="/", status_code=302)
+    def delete(self, id: int):
+        service_request_table.delete(id)
+        return RedirectResponse(url="/", status_code=302)
