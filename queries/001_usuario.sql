@@ -1,4 +1,4 @@
--- SELECT_MANY
+--SELECT_MANY
 SELECT * FROM public."Usuario";
 --END-SELECT_MANY
 
