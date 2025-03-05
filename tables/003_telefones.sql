@@ -1,4 +1,4 @@
-CREATE TABLE  IF NOT EXISTS public."Telefones" (
+CREATE TABLE IF NOT EXISTS public."Telefones" (
  ddd int NOT NULL,
  numero text NOT NULL,
  usuario_id int NOT NULL,
