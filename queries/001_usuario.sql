@@ -2,7 +2,7 @@
 SELECT * FROM public."Usuario";
 --END-SELECT_MANY
 
--- SELECT
+--SELECT
 SELECT * FROM public."Usuario"
 WHERE id = %s;
 --END-SELECT
