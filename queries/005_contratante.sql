@@ -12,7 +12,7 @@ INSERT INTO public."Contratante" (usuario_id)
 VALUES (%s);
 --END-INSERT
 
--- UPDATE
+--UPDATE
 UPDATE public."Contratante"
 SET
     usuario_id = %s
