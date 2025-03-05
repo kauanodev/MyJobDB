@@ -1,4 +1,4 @@
--- SELECT_MANY
+--SELECT_MANY
 SELECT * FROM public."Contratante";
 --END-SELECT_MANY
 
