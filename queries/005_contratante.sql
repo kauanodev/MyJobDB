@@ -2,7 +2,7 @@
 SELECT * FROM public."Contratante";
 --END-SELECT_MANY
 
--- SELECT
+--SELECT
 SELECT * FROM public."Contratante"
 WHERE usuario_id = %s;
 --END-SELECT
