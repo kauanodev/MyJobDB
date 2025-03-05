@@ -6,7 +6,7 @@ from app.settings import PROJECT_NAME, BACKEND_CORS_ORIGINS, APP_ROOT
 from app.db.tables.create import create_tables
 from app.db.seeds import create_seeds
 
-from app.routes import index, service, service_provider, service_request, user
+from app.routes import index, service, service_contractor, service_provider, service_request, user
 
 
 app = FastAPI(title=PROJECT_NAME)
@@ -17,6 +17,7 @@ app = FastAPI()
 ############
 all_routers = [
     index.router, service.router,
+    service_contractor.router,
     service_provider.router,
     service_request.router,
     user.router
