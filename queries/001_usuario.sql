@@ -7,7 +7,7 @@ SELECT * FROM public."Usuario"
 WHERE id = %s;
 --END-SELECT
 
--- INSERT
+--INSERT
 INSERT INTO public."Usuario" (id, cpf, endereco, nome, data_de_nascimento)
 VALUES (%s, %s, %s, %s, %s);
 --END-INSERT
