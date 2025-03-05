@@ -1,6 +1,6 @@
 --SELECT_MANY
 SELECT * FROM public."Telefones";
---END_SELECT_MANY
+--END-SELECT_MANY
 
 --SELECT
 SELECT * FROM public."Telefones"
